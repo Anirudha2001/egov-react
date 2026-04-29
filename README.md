@@ -81,5 +81,3 @@ src/
 ```bash
 npm run build
 ```
-
-Production files are generated in `dist/`.
