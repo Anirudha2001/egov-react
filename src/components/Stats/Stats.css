@@ -1,0 +1,139 @@
+.stats-section {
+  color: #fff;
+  margin-top: 0;
+}
+
+.stats-wrap {
+  width: 100%;
+  margin: 0 auto;
+  padding: 3.1rem 0 6.8rem;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(15, 14, 18, 0.65), rgba(15, 14, 18, 0.25)),
+    url("/images/Kd4GNNMr83A-HD.jpg") no-repeat center center / cover;
+}
+
+.stats-wrap::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(88, 217, 223, 0.16), transparent 68%);
+  pointer-events: none;
+  animation: driftGlow 7.5s ease-in-out infinite;
+}
+
+.stats-lead {
+  width: min(100% - 2rem, var(--container));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.stats-number {
+  margin: 0;
+  font-size: clamp(2.9rem, 6.9vw, 4.6rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  background: linear-gradient(135deg, #fff 25%, rgba(88, 217, 223, 0.82) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stats-subcopy {
+  color: rgba(255, 255, 255, 0.94);
+  line-height: 1.45;
+  font-size: clamp(0.72rem, 0.95vw, 0.85rem);
+  max-width: 390px;
+}
+
+.stats-grid {
+  width: min(100% - 2rem, var(--container));
+  margin: 3rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.6rem;
+  max-width: 690px;
+  justify-content: start;
+}
+
+.insight-card {
+  padding: 1.05rem 1.2rem;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.insight-value {
+  margin: 0;
+  font-size: clamp(1.45rem, 2.25vw, 2.1rem);
+  font-weight: 400;
+  color: #fff;
+}
+
+.insight-text {
+  max-width: 180px;
+  margin-top: 0.45rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.45;
+  font-size: 0.76rem;
+}
+
+@media (max-width: 991px) {
+  .stats-wrap {
+    padding-top: 3.25rem;
+    padding-bottom: 6.5rem;
+  }
+
+  .stats-lead {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    margin-top: 4rem;
+    gap: 1.75rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    margin-top: 3rem;
+    gap: 1.2rem;
+  }
+
+  .insight-text {
+    max-width: 100%;
+    padding-right: 0;
+  }
+
+  .insight-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 575px) {
+  .stats-number {
+    font-size: clamp(2.35rem, 12vw, 3.4rem);
+  }
+
+  .stats-subcopy {
+    font-size: 0.96rem;
+  }
+
+  .insight-text {
+    padding-right: 0;
+    font-size: 0.94rem;
+  }
+}

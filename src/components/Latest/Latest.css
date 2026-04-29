@@ -1,0 +1,229 @@
+.latest-section {
+  position: relative;
+}
+
+.latest-section::before {
+  content: "";
+  position: absolute;
+  inset: 2rem 0 auto;
+  height: 420px;
+  background: linear-gradient(180deg, rgba(233, 245, 255, 0.75), rgba(233, 245, 255, 0));
+  pointer-events: none;
+}
+
+.latest-head {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.latest-head .section-title {
+  max-width: 14ch;
+}
+
+.filter-track {
+  position: relative;
+  margin-top: 1.8rem;
+}
+
+.filter-track::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 2.5rem;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(to left, var(--bg) 15%, transparent);
+}
+
+.filter-row {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0.2rem 0.1rem 0.85rem;
+  scroll-behavior: smooth;
+}
+
+.filter-row::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-chip {
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding: 0.72rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--text-soft);
+  font-weight: 700;
+  box-shadow: 0 10px 20px rgba(12, 56, 114, 0.04);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.filter-chip:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.filter-chip:hover:not(.active) {
+  background: var(--surface-soft);
+  border-color: rgba(8, 106, 216, 0.22);
+  color: var(--text);
+}
+
+.filter-chip.active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(10, 59, 116, 0.22);
+}
+
+.resource-panel {
+  display: none;
+  margin-top: 2rem;
+}
+
+.resource-panel.active {
+  display: block;
+}
+
+.resource-grid {
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.resource-card {
+  background: var(--surface);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 24px 54px rgba(12, 56, 114, 0.08);
+  border: 1px solid rgba(214, 227, 246, 0.95);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-media {
+  overflow: hidden;
+}
+
+.resource-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.resource-body {
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 235px;
+}
+
+.resource-type {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  color: var(--brand);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.resource-title {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.45;
+}
+
+.resource-meta {
+  margin-top: 0.85rem;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.tag {
+  padding: 0.38rem 0.72rem;
+  border-radius: 999px;
+  background: var(--brand-soft);
+  color: var(--brand-deep);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  color: var(--brand-deep);
+  font-weight: 700;
+}
+
+.resource-link i {
+  transition: transform 0.2s ease;
+}
+
+.resource-card:hover .resource-link i {
+  transform: translateX(5px);
+}
+
+.resource-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 30px 60px rgba(12, 56, 114, 0.12);
+}
+
+.resource-card:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 991px) {
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .latest-head {
+    align-items: flex-start;
+  }
+
+  .latest-head .section-title {
+    max-width: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .resource-card {
+    border-radius: 24px;
+  }
+
+  .resource-body {
+    min-height: auto;
+  }
+
+  .resource-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .resource-body {
+    padding: 1.1rem;
+  }
+}
